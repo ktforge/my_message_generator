@@ -8,6 +8,29 @@ const messageParts = {
 // Pick a random item from any array
 const getRandom = arr => arr[Math.floor(Math.random() * arr.length)];
 
+// Loop through each category and format its random piece
+const buildMessage = () => {
+    const lines = [];
+    for (const part in messageParts) {
+        const choice = getRandom(messageParts[part]);
+        switch (part) {
+            case 'sign':
+                lines.push(`Your coding sign is ${choice}.`);
+                break;
+            case 'forcacast':
+                lines.push(`Today's forecase: ${choice}`);
+                break;
+            case 'advice':
+                lines.push(`You should: "${choice}`);
+                break;
+            default:
+                lines.push('The stars are unclear today.');
+        }
+    }
+    return lines;
+}
+
 
 // Test code 
-console.log(getRandom(messageParts.sign));
+// console.log(getRandom(messageParts.sign));
+console.log(buildMessage());
