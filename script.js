@@ -35,12 +35,10 @@ const displayMessage = () => {
     const lines = buildMessage();
     console.log('--- Your Daily Dev Fortune ---');
     console.log(lines.join('\n\n'));
-}
+};
 
 // Run the program
 displayMessage();
 
-
-// Test code 
-// console.log(getRandom(messageParts.sign));
-// console.log(buildMessage());
+// ASCII crystal ball
+console.log('   .---.\n  ( o o )\n   `---`');
